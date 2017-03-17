@@ -5,3 +5,4 @@ Server/
 HelloWorld.txt
 certificate.crt
 Workspace/
+*.class
