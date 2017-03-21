@@ -30,7 +30,7 @@ public class Server {
 				// String message = in.nextLine();
 				byte[] sendData = message.getBytes();
 				InetAddress groupAddress = InetAddress.getByName("10.36.179.191");
-				DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, 80);
+				DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, 15001);
 				serverSocket.send(sendPacket);
 				message = JOptionPane.showInputDialog("Please input a value");
 			}
