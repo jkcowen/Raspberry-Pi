@@ -63,7 +63,9 @@ public class Server {
 			}
 			try{
 				//Process process = new ProcessBuilder("C:/Program Files (x86)/Windows Media Player/T-shirt.mp3").start();
-				Desktop.getDesktop().open(new File("C:/users/jkc11/onedrive/documents/cpre186/server/"+fileName));
+				//Desktop.getDesktop().open(new File("C:/users/jkc11/onedrive/documents/cpre186/server/"+fileName));
+				Thread t = new Thread(new Playmusic(fileName));
+				t.start();
 			} catch(Exception e){
 				e.printStackTrace();
 			}
