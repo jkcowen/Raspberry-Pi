@@ -8,7 +8,6 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-
 public class Playmusic implements Runnable {
     // public static void main(String[] args){
         // Thread t = new Thread(new Playmusic());
