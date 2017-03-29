@@ -37,8 +37,8 @@ public class Client {
 					// create tcp/ip socket
 					// clientSocket = new Socket("10.36.179.191", 15001);
 					// clientSocket = new Socket("10.26.42.47", 15001);
-					// clientSocket = new Socket("10.24.84.226", 15001);
-					clientSocket = new Socket("127.0.0.1", 15001);
+					clientSocket = new Socket("10.24.84.226", 15001);
+					// clientSocket = new Socket("127.0.0.1", 15001);
 					// create input and output streams from socket
 					outToServer = new DataOutputStream(clientSocket.getOutputStream());
 					inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
