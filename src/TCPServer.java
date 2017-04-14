@@ -1,4 +1,4 @@
-package FileUploadTCP;
+package src;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -13,7 +13,7 @@ import java.net.Socket;
 import java.util.Scanner;
 import java.awt.Desktop;
 
-public class Server {
+public class TCPServer {
 
 	public static void main(String[] args) throws Exception {
 		String fileName = "";
@@ -35,7 +35,7 @@ public class Server {
 				Scanner lengthInput = new Scanner(fileLength);
 				int length = lengthInput.nextInt();
 				lengthInput.close();
-				File file = new File("C:/users/jkc11/onedrive/documents/cpre186/server/"+fileName);
+				File file = new File("C:/users/jkc11/onedrive/documents/cpre186/Server/"+fileName);
 				DataOutputStream fileOutput = new DataOutputStream(new FileOutputStream(file));
 				byte[] cbuf = new byte[length];
 				int bytesRead = 0;
@@ -61,6 +61,7 @@ public class Server {
 			} finally {
 				System.out.println("Connection socket closed");
 			}
+			/**
 			try{
 				//Process process = new ProcessBuilder("C:/Program Files (x86)/Windows Media Player/T-shirt.mp3").start();
 				//Desktop.getDesktop().open(new File("C:/users/jkc11/onedrive/documents/cpre186/server/"+fileName));
@@ -68,7 +69,7 @@ public class Server {
 				t.start();
 			} catch(Exception e){
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 

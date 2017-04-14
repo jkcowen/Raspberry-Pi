@@ -1,4 +1,4 @@
-package broadcast;
+package src;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class Server {
+public class UserUtil {
 	/*
 	public static void main(String[] args) {
 		//createAndShowGUI();
@@ -49,13 +49,14 @@ public class Server {
 	}*/
 	
 	public static void playFile(String filename) throws Exception{
-		DatagramSocket serverSocket = new DatagramSocket(15002);
+		DatagramSocket serverSocket = new DatagramSocket(15003);
 		byte[] sendData = filename.getBytes();
-		// InetAddress groupAddress = InetAddress.getByName("255.255.255.255");
-		InetAddress groupAddress = InetAddress.getByName("10.26.42.255");
+		InetAddress groupAddress = InetAddress.getByName("255.255.255.255");
+		// InetAddress groupAddress = InetAddress.getByName("10.26.42.255");
 		// InetAddress groupAddress = InetAddress.getByName("10.36.179.191");
-		DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, 15001);
+		DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, groupAddress, 15002);
 		serverSocket.send(sendPacket);
+		serverSocket.close();
 	}
 	
 	public static void uploadFile(InetAddress[] addresses, File file) throws Exception{
